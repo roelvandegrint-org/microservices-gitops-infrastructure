@@ -1,0 +1,4 @@
+resources:
+- api.configmap.yml
+- api.deployment.yml
+- api.service.yml

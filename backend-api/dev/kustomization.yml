@@ -1,0 +1,6 @@
+resources:
+- ../../base
+
+images:
+- name: roelvandegrint.azurecr.io/backend-api
+  newTag: 9c7b227069cb94b9fbf64041bb0a165438bc4c6b
