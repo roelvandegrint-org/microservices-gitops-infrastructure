@@ -1,4 +1,4 @@
-name: Test Repo Update
+name: Update Backend API
 
 # When this action will be executed
 on: [repository_dispatch]
