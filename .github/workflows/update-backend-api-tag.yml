@@ -7,7 +7,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     # Check event_type here to match public-api-updated
-    if: ${{ github.event.event_type }} == 'public-api-updated' 
+    if: ${{ github.event.event_type }} == 'backend-api-updated'
     steps:
       - name: Checkout to the branch
         uses: actions/checkout@v2
@@ -15,7 +15,7 @@ jobs:
       - name: Find and Replace
         uses: jacobtomlinson/gha-find-replace@v2
         with:
-          include: kustomize/public-api/overlays/dev/kustomization.yml
+          include: kustomize/backend-api/overlays/dev/kustomization.yml
           find: "newTag:\\s*.*\n"
           replace: "newTag: ${{ github.event.client_payload.tag }}\n"
           regex: true
@@ -23,7 +23,7 @@ jobs:
       - name: Commit and push
         uses: EndBug/add-and-commit@v9
         with:
-          add: kustomize/public-api/overlays/dev/kustomization.yml
+          add: kustomize/backend-api/overlays/dev/kustomization.yml
           author_name: Roel van de Grint
           author_email: roelvandegrint@gmail.com
-          message: Update Public API image tag
+          message: Update Backend API image tag
