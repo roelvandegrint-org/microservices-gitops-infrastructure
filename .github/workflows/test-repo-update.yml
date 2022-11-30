@@ -2,17 +2,7 @@ name: Test Repo Update
 
 # When this action will be executed
 on:
-  # Automatically trigger it when detected changes in repo
-  push:
-    branches:
-      - main
-    paths:
-      - public.API/**
-
-  # Allow mannually trigger
-  workflow_dispatch:
-
-# env:
+  [repository_dispatch]
 
 jobs:
   build:
