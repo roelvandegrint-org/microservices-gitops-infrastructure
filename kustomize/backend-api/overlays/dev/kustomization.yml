@@ -3,4 +3,4 @@ resources:
 
 images:
 - name: roelvandegrint.azurecr.io/backend-api
-  newTag: 9c7b227069cb94b9fbf64041bb0a165438bc4c6b
+  newTag: 8d3d2b4a666d04209707be7e3897453096fb6ab4
