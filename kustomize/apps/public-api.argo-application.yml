@@ -4,7 +4,7 @@ metadata:
   name: microservices-with-gitops-public-api
 spec:
   destination:
-    namespace: argocd
+    namespace: development
     server: 'https://kubernetes.default.svc'
   source:
     path: public-api/kustomize/overlays/dev

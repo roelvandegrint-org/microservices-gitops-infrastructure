@@ -4,7 +4,7 @@ metadata:
   name: microservices-with-gitops
 spec:
   destination:
-    namespace: development
+    namespace: argocd
     server: 'https://kubernetes.default.svc'
   source:
     path: kustomize/apps
