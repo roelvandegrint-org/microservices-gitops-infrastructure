@@ -1,0 +1,33 @@
+name: Test Repo Update
+
+# When this action will be executed
+on:
+  [repository_dispatch]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    # Check event_type here to match public-api-updated
+    # if: 
+    steps:
+      - name: Checkout to the branch
+        uses: actions/checkout@v2
+
+      - run: echo 'I ran! ${{ github.event.client_payload.tag }}'
+        # if: ${{ github.event.event_type == public-api-updated }}
+      
+      - name: Find and Replace
+        uses: jacobtomlinson/gha-find-replace@v2
+        with:
+          include: kustomize/public-api/overlays/dev/kustomization.yml
+          find: "newTag:\\s*.*\n"
+          replace: "newTag: ${{ github.event.client_payload.tag }}\n"
+          regex: true
+
+      - name: Commit and push
+        uses: EndBug/add-and-commit@v9
+        with:
+          add: kustomize/public-api/overlays/dev/kustomization.yml
+          author_name: Roel van de Grint
+          author_email: roelvandegrint@gmail.com
+          message: Update Public API image tag
