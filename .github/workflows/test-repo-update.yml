@@ -8,4 +8,4 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - run: echo 'I ran!' 
+      - run: echo 'I ran! ${{ github.event.client_payload.tag }}' 
