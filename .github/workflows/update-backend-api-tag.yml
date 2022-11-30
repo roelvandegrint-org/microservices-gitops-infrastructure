@@ -7,11 +7,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     # Check event_type here to match public-api-updated
-    if: ${{ github.event.event_type }} == 'backend-api-updated'
+    if: ${{ github.event.type }} == 'backend-api-updated'
     steps:
 
-      - run: echo ${{ github.event.event_type }}
-      - run: echo ${{ github.event.event_type }} == 'backend-api-updated'
+      - run: echo ${{ github.event.type }}
+      - run: echo ${{ github.event.type }} == 'backend-api-updated'
 
       - name: Checkout to the branch
         uses: actions/checkout@v2

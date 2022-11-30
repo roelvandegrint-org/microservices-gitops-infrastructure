@@ -7,7 +7,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     # Check event_type here to match public-api-updated
-    if: ${{ github.event.event_type }} == 'public-api-updated' 
+    if: ${{ github.event.type }} == 'public-api-updated' 
     steps:
       - name: Checkout to the branch
         uses: actions/checkout@v2
