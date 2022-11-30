@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: public-api
+
+spec:
+  replicas: {{ .Values.replicas }}
+  selector:
+    matchLabels:
+      app: public-api
+  template:
+    metadata:
+      name: public-api
+      labels:
+        app: public-api
+    spec:
+      containers:
+      - name: public-api
+        image: roelvandegrint.azurecr.io/public-api:{{ .Values.tag }}
+        resources:
+          limits:
+            memory: 128Mi
+            cpu: 500m
+        envFrom:
+        - configMapRef:
+            name: public-api-configmap
+        - secretRef:
+            name: public-api-secrets
+      imagePullSecrets:
+        - name: roelvandegrint.azurecr.io
