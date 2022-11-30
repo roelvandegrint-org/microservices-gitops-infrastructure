@@ -10,7 +10,7 @@ jobs:
     if: ${{ github.event.type }} == 'backend-api-updated'
     steps:
 
-      - run: echo ${{ github.event.type }}
+      - run: echo ${{ github.event }}
       - run: echo ${{ github.event.type }} == 'backend-api-updated'
 
       - name: Checkout to the branch
