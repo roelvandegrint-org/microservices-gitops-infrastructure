@@ -1,13 +1,13 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: microservices-with-gitops
+  name: microservices-with-gitops-backend-api
 spec:
   destination:
-    namespace: argocd
+    namespace: default
     server: 'https://kubernetes.default.svc'
   source:
-    path: kustomize/apps
+    path: kustomize/backend-api/overlays/prod
     repoURL: 'https://github.com/roelvandegrint/microservices-gitops-infrastructure.git'
     targetRevision: HEAD
   project: default

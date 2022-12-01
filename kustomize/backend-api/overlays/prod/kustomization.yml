@@ -6,4 +6,4 @@ patches:
 
 images:
 - name: roelvandegrint.azurecr.io/public-api
-  newTag: ea544599409fc8c3e4f9669dbb7854256e9581d6
+  newTag: c756b7475a2667762beb271ee32b17bc011e538e
