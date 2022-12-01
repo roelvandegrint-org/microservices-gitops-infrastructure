@@ -6,7 +6,7 @@ metadata:
     name: myingress
 spec:
   rules:
-  - host: cf.local
+  - host: public.captoso.eu
     http:
       paths:
       - pathType: Prefix
@@ -16,7 +16,7 @@ spec:
             name: public-api
             port:
               number: 80
-  - host: cf.backend
+  - host: backend.captoso.eu
     http:
       paths:
       - pathType: Prefix
