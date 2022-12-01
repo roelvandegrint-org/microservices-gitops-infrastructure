@@ -5,9 +5,9 @@ metadata:
 spec:
   destination:
     namespace: argocd
-    server: 'https://kubernetes.default.svc'
+    server: 'https://aks-roelvandegrint-714c1662.hcp.westeurope.azmk8s.io:443'
   source:
-    path: kustomize/apps
+    path: kustomize/apps/prod
     repoURL: 'https://github.com/roelvandegrint/microservices-gitops-infrastructure.git'
     targetRevision: HEAD
   project: default
