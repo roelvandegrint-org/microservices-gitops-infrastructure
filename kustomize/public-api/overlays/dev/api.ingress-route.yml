@@ -1,0 +1,15 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: mgo-ingress
+  namespace: development
+spec:
+  routes:
+  - kind: Rule
+    match: Host('public.captoso.eu')
+    priority: 10
+    services:
+    - kind: Service
+      name: public-api
+      namespace: development
+      port: 80
