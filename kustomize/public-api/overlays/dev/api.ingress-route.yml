@@ -10,5 +10,5 @@ spec:
     priority: 10
     services:
     - kind: Service
-      name: public-api
+      name: public-api-development
       port: 80
