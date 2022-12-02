@@ -1,6 +1,6 @@
 resources:
 - ../../base
-# - ./api.ingress.yml
+- ./api.ingress-route.yml
 
 images:
 - name: roelvandegrint.azurecr.io/public-api
