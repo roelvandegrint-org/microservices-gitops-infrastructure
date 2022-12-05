@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: microservices-with-gitops-backend-api-development
+  name: backend-api
 spec:
   destination:
     namespace: development
