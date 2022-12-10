@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: public-api
+  name: public-api-dev
 spec:
   destination:
     namespace: development
