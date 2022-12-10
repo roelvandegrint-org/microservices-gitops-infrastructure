@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: backend-api
+spec:
+  destination:
+    namespace: acceptance
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: kustomize/backend-api/overlays/acc
+    repoURL: 'https://github.com/roelvandegrint/microservices-gitops-infrastructure.git'
+    targetRevision: HEAD
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
