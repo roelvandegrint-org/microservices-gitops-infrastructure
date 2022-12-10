@@ -1,0 +1,2 @@
+resources:
+- ./roelvandegrint.azurecr.io-docker-registry-secret-sealed.yml
