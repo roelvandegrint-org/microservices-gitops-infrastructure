@@ -6,7 +6,7 @@ metadata:
 spec:
   routes:
   - kind: Rule
-    match: Host(`acc.captoso.eu/public`)
+    match: Host(`acc.captoso.eu`)
     priority: 10
     services:
     - kind: Service
