@@ -17,6 +17,7 @@ spec:
       containers:
       - name: public-api
         image: roelvandegrint.azurecr.io/public-api
+        imagePullPolicy: Always
         resources:
           limits:
             memory: 128Mi

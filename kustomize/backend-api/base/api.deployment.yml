@@ -17,6 +17,7 @@ spec:
       containers:
       - name: backend-api
         image: roelvandegrint.azurecr.io/backend-api:9c7b227069cb94b9fbf64041bb0a165438bc4c6b
+        imagePullPolicy: Always
         resources:
           limits:
             memory: 128Mi
