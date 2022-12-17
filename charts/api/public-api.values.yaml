@@ -15,7 +15,7 @@ image:
 
 imagePullSecrets: []
 nameOverride: ""
-fullnameOverride: ""
+fullnameOverride: "public-api"
 
 service:
   type: ClusterIP

@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Release.Name }}
+  name: {{ include "api.fullname" . }}
   namespace: {{ .Release.namespace }}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: {{ .Release.Name }}
+      app: {{ include "api.fullname" . }}
   template:
     metadata:
-      name: {{ .Release.Name }}
+      name: {{ include "api.fullname" . }}
       labels:
-        app: {{ .Release.Name }}
+        app: {{ include "api.fullname" . }}
     spec:
       containers:
-      - name: {{ .Release.Name }}
+      - name: {{ include "api.fullname" . }}
         image: {{ .Values.image.registry }}/{{ .Values.image.repository }}:{{ .Chart.AppVersion }}
         imagePullPolicy: Always
         resources:
@@ -24,8 +24,8 @@ spec:
             cpu: 500m
         envFrom:
         - configMapRef:
-            name: {{ .Release.Name }}
+            name: {{ include "api.fullname" . }}
         - secretRef:
-              name: {{ .Release.Name }}-secrets
+              name: {{ include "api.fullname" . }}-secrets
       imagePullSecrets:
         - name: roelvandegrint.azurecr.io
