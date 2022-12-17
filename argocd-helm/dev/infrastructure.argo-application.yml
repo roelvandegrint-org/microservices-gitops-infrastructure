@@ -8,7 +8,9 @@ spec:
     repoURL: 'https://github.com/roelvandegrint/microservices-gitops-infrastructure'
     path: charts/infrastructure
     targetRevision: HEAD
-    helm: {}
+    helm:
+      valueFiles:
+        - values.yaml
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: development-helm
