@@ -26,6 +26,6 @@ spec:
         - configMapRef:
             name: {{ .Release.Name }}
         - secretRef:
-              name: public-api-secrets
+              name: {{ .Release.Name }}-secrets
       imagePullSecrets:
         - name: roelvandegrint.azurecr.io
