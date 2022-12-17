@@ -8,14 +8,14 @@ replicaCount: 1
 
 image:
   registry: roelvandegrint.azurecr.io
-  repository: public-api
+  repository: backend-api
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "8ca7d519fea69d3b2784acc0df09dceb47593e51"
+  tag: "c756b7475a2667762beb271ee32b17bc011e538e"
 
 imagePullSecrets: []
 nameOverride: ""
-fullnameOverride: "public-api"
+fullnameOverride: "backend-api"
 
 service:
   type: ClusterIP
