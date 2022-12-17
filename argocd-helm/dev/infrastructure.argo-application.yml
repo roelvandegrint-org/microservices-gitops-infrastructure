@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: infrastructure-dev-helm
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/roelvandegrint/microservices-gitops-infrastructure'
+    path: charts/infrastructure
+    targetRevision: HEAD
+    helm: {}
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: development-helm
+  syncPolicy:
+      automated:
+        prune: true
+        selfHeal: true
