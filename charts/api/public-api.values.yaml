@@ -10,7 +10,7 @@ image:
   repository: roelvandegrint.azurecr.io/public-api
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "8ca7d519fea69d3b2784acc0df09dceb47593e511"
+  tag: "8ca7d519fea69d3b2784acc0df09dceb47593e51"
 
 imagePullSecrets: []
 nameOverride: ""
