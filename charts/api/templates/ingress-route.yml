@@ -1,0 +1,17 @@
+{{- if .Values.ingress.enabled }}
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: {{ include "api.fullname" . }}
+  namespace: {{ .Release.namespace }}
+spec:
+  routes:
+  - kind: Rule
+    match: Host(`{{ .Values.ingress.host }}`)
+    priority: 10
+    services:
+    - kind: Service
+      name: public-api
+      port: 80
+{{- end }}
+  
