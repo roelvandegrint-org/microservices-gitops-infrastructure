@@ -7,8 +7,7 @@ namespace: development-helm
 replicaCount: 1
 
 image:
-  registry: roelvandegrint.azurecr.io
-  repository: backend-api
+  repository: roelvandegrint.azurecr.io/backend-api
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "c756b7475a2667762beb271ee32b17bc011e538e"
