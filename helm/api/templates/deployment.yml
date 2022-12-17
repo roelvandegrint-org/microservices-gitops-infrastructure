@@ -1,22 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: public-api
-
+  name: {{ .Chart.Name }}
+  namespace: {{ .Values.namespace }}
 spec:
-  replicas: {{ .Values.replicaCount }}
+  replicas: 1
   selector:
     matchLabels:
-      app: public-api
+      app: {{ .Chart.Name }}
   template:
     metadata:
-      name: public-api
+      name: {{ .Chart.Name }}
       labels:
-        app: public-api
+        app: {{ .Chart.Name }}
     spec:
       containers:
       - name: public-api
-        image: "{{ .Values.image.repository }}:{{ .Values.image.tag}}"
+        image: roelvandegrint.azurecr.io/public-api
+        imagePullPolicy: Always
         resources:
           limits:
             memory: 128Mi

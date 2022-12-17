@@ -1,0 +1,8 @@
+apiVersion: v1
+data:
+  .dockerconfigjson: eyJhdXRocyI6eyJyb2VsdmFuZGVncmludC5henVyZWNyLmlvIjp7InVzZXJuYW1lIjoiMDU0OWY5NjQtNWM3ZS00OTg2LWFlNGEtOTY1ODY0YmM3YTQ1IiwicGFzc3dvcmQiOiJRa3AzRFhtLXRQT1hOby01d0M2OWdkSHlvVDBINlJhM2cxIiwiYXV0aCI6Ik1EVTBPV1k1TmpRdE5XTTNaUzAwT1RnMkxXRmxOR0V0T1RZMU9EWTBZbU0zWVRRMU9sRnJjRE5FV0cwdGRGQlBXRTV2TFRWM1F6WTVaMlJJZVc5VU1FZzJVbUV6WnpFPSJ9fX0=
+kind: Secret
+metadata:
+  name: roelvandegrint.azurecr.io
+  namespace: development-helm
+type: kubernetes.io/dockerconfigjson
