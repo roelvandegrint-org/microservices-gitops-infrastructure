@@ -3,6 +3,8 @@ kind: IngressRoute
 metadata:
   name: traefik-dashboard-roel
 spec:
+  entryPoints:
+    - web
   routes:
   - match: Host(`traefik.k3s`) && (PathPrefix(`/api`) || PathPrefix(`/dashboard`))
     kind: Rule
