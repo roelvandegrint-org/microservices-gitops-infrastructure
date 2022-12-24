@@ -1,8 +1,10 @@
 resources:
 - ../../base
-- ./api.deployment.yml
 - ./api.ingress-route.yml
 - ./public-api-secrets-sealed.yml
+
+patches:
+- ./api.deployment.yml
 
 images:
 - name: roelvandegrint.azurecr.io/public-api
