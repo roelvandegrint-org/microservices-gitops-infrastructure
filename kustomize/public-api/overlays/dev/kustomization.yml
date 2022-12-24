@@ -3,9 +3,6 @@ resources:
 - ./api.ingress-route.yml
 - ./public-api-secrets-sealed.yml
 
-patches:
-- ./api.deployment.yml
-
 images:
 - name: roelvandegrint.azurecr.io/public-api
   newTag: 8ca7d519fea69d3b2784acc0df09dceb47593e51
