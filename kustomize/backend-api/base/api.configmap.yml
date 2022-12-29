@@ -4,3 +4,4 @@ metadata:
   name: backend-api-configmap
 data:
   LOGGING__LOGLEVEL__MICROSOFT.ASPNETCORE: Information
+  JAEGER__GRPCENDPOINT: http://jaeger-collector:4317

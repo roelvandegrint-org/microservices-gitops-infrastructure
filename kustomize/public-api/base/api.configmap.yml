@@ -3,5 +3,6 @@ kind: ConfigMap
 metadata:
   name: public-api-configmap
 data:
-  logging__LogLevel__Microsoft_AspNetCore: Information
-  backendApiBaseAddress: http://backend-api
+  LOGGING__LOGLEVEL__MICROSOFT.ASPNETCORE: Information
+  BACKENDAPIBASEADDRESS: http://backend-api
+  JAEGER__GRPCENDPOINT: http://jaeger-collector:4317
