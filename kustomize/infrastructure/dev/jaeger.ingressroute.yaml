@@ -10,5 +10,5 @@ spec:
       match: Host(`jaeger.k3s`)
       priority: 10
       services:
-        - name: simplest-query
+        - name: jaeger-query
           port: 16686
