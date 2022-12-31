@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongodb-frontend
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongodb-frontend
+  template:
+    metadata:
+      name: mongodb-frontend
+      labels:
+        app: mongodb-frontend
+    spec:
+      containers:
+      - name: mongodb-frontend
+        image: mongo:6.0.3
+        imagePullPolicy: Always
+        resources:
+          limits:
+            memory: 128Mi
+            cpu: 500m
