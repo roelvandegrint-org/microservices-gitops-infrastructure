@@ -2,5 +2,3 @@ resources:
 - ./roelvandegrint.azurecr.io-docker-registry-secret-sealed.yaml
 - ./jaeger.yaml
 - ./jaeger.ingressroute.yaml
-- ./mongodb.deployment.yaml
-- ./mongodb.service.yaml
