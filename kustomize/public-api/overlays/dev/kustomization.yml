@@ -5,4 +5,4 @@ resources:
 
 images:
 - name: roelvandegrint.azurecr.io/public-api
-  newTag: 3b1a69cf4a832e7d99058519645fb00bea9e20f1
+  newTag: babf551a3cb2fb39439a95b7893cbac6c36d5c31
