@@ -11,7 +11,7 @@ spec:
     server: 'https://kubernetes.default.svc'
   source:
     path: argocd/mongodb
-    repoURL: 'https://github.com/roelvandegrint/microservices-gitops-infrastructure.git'
+    repoURL: 'https://github.com/roelvandegrint/microservices-gitops-infrastructure/tree/mongodb.git'
     targetRevision: HEAD
   project: default
   syncPolicy:
