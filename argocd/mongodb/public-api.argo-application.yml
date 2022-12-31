@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: public-api-dev
+  name: public-api-dev-mongodb
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
