@@ -10,8 +10,8 @@ spec:
     server: 'https://kubernetes.default.svc'
   source:
     path: kustomize/public-api/overlays/dev
-    repoURL: 'https://github.com/roelvandegrint/microservices-gitops-infrastructure/tree/mongodb.git'
-    targetRevision: HEAD
+    repoURL: 'https://github.com/roelvandegrint/microservices-gitops-infrastructure.git'
+    targetRevision: mongodb
   project: default
   syncPolicy:
     automated:
