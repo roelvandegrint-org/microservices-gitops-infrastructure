@@ -5,7 +5,7 @@ metadata:
 spec:
   routes:
   - kind: Rule
-    match: Host(`dev-mongodb1.captoso.eu`)
+    match: Host(`dev-mongodb.captoso.eu`)
     priority: 10
     services:
     - kind: Service
