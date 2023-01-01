@@ -12,7 +12,7 @@ spec:
   source:
     path: argocd/dev
     repoURL: 'https://github.com/roelvandegrint/microservices-gitops-infrastructure.git'
-    targetRevision: HEAD
+    targetRevision: mongodb
   project: default
   syncPolicy:
     automated:

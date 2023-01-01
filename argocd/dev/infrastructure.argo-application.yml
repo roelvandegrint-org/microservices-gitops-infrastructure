@@ -6,12 +6,14 @@ metadata:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: development
+    namespace: roeltest
     server: 'https://kubernetes.default.svc'
   source:
     path: kustomize/infrastructure/dev
     repoURL: 'https://github.com/roelvandegrint/microservices-gitops-infrastructure.git'
     targetRevision: HEAD
+    kustomize:
+      nameSuffix: roeltest
   project: default
   syncPolicy:
     automated:
