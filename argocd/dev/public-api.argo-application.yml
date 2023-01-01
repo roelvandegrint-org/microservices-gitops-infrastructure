@@ -1,12 +1,12 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: public-api-dev-roeltest
+  name: public-api-dev-mongodb
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: roeltest
+    namespace: development-mongodb
     server: 'https://kubernetes.default.svc'
   source:
     path: kustomize/public-api/overlays/dev

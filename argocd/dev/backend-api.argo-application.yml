@@ -1,12 +1,12 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: backend-api-dev-roeltest
+  name: backend-api-dev-mongodb
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: roeltest
+    namespace: development-mongodb
     server: 'https://kubernetes.default.svc'
   source:
     path: kustomize/backend-api/overlays/dev
