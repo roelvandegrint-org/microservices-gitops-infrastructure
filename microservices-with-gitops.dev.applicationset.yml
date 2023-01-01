@@ -11,7 +11,11 @@ spec:
       repoURL: 'https://github.com/roelvandegrint/microservices-gitops-infrastructure.git'
       revision: HEAD
       directories:
-      - path: kustomize/infrastructure/overlays/*
+      - path: argocd/*
+      - path: argocd/acc
+        exclude: true
+      - path: argocd/prod
+        exclude: true
   template:
     metadata:
       name: app-of-apps-{{path.basename}}
