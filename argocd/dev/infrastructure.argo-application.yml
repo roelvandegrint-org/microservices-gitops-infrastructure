@@ -9,7 +9,7 @@ spec:
     namespace: development
     server: 'https://kubernetes.default.svc'
   source:
-    path: kustomize/infrastructure/dev
+    path: kustomize/infrastructure/overlays/dev
     repoURL: 'https://github.com/roelvandegrint/microservices-gitops-infrastructure.git'
     targetRevision: HEAD
   project: default
