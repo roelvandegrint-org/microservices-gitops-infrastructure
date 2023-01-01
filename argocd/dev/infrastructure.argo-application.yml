@@ -11,7 +11,7 @@ spec:
   source:
     path: kustomize/infrastructure/dev
     repoURL: 'https://github.com/roelvandegrint/microservices-gitops-infrastructure.git'
-    targetRevision: HEAD
+    targetRevision: mongodb
     kustomize:
       nameSuffix: roeltest
   project: default
