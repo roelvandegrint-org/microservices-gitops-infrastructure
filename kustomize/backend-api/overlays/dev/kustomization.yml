@@ -3,6 +3,6 @@ resources:
 - ./backend-api-secrets-sealed.yml
 
 images:
-- name: roelvandegrint.azurecr.io/backend-api
-  newTag: babf551a3cb2fb39439a95b7893cbac6c36d5c31
+- name: roelvandegrint.azurecr.io/backend-api-mongodb
+  newTag: ee0def4675cec2ab062e17f9fa3834e6f52c5f3e
 
