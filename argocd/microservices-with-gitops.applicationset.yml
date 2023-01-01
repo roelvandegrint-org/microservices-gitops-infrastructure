@@ -18,13 +18,13 @@ spec:
     metadata:
       name: '{{path[1]}}-{{path.basename}}'
       namespace: argocd
-      # finalizers:
-      # - resources-finalizer.argocd.argoproj.io
+      finalizers:
+      - resources-finalizer.argocd.argoproj.io
     spec:
       project: default
       source:
         repoURL: 'https://github.com/roelvandegrint/microservices-gitops-infrastructure.git'
-        targetRevision: mongodb
+        targetRevision: HEAD
         path: '{{path}}'
       destination:
         namespace: 'microservices-gitops-{{path.basename}}'
