@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: public-api
-        image: roelvandegrint.azurecr.io/public-api
+        image: roelvandegrint.azurecr.io/public-api-mongodb
         imagePullPolicy: Always
         resources:
           limits:
