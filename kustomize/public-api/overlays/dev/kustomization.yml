@@ -1,5 +1,7 @@
-resources:
+bases:
 - ../../base
+
+resources:
 - ./api.ingress-route.yml
 - ./public-api-secrets-sealed.yml
 
