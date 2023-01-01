@@ -2,5 +2,3 @@ resources:
 - ./api.configmap.yml
 - ./api.deployment.yml
 - ./api.service.yml
-- ./mongodb.deployment.yml
-- ./mongodb.service.yml
