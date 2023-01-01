@@ -12,8 +12,6 @@ spec:
     path: kustomize/public-api/overlays/dev
     repoURL: 'https://github.com/roelvandegrint/microservices-gitops-infrastructure.git'
     targetRevision: mongodb
-    kustomize:
-      nameSuffix: roeltest
   project: default
   syncPolicy:
     automated:
