@@ -1,0 +1,47 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: microservice-with-gitops-infrastructure
+  namespace: argocd
+spec:
+  generators:
+  - scmProvider:
+      cloneProtocol: https
+      github:
+        # The GitHub organization to scan.
+        organization: roelvandegrint-org
+        # For GitHub Enterprise:
+        api: https://api.github.com/
+        # If true, scan every branch of every repository. If false, scan only the default branch. Defaults to false.
+        allBranches: true
+        # Reference to a Secret containing an access token. (optional)
+        tokenRef:
+          secretName: argocd-scm-provider-github
+          key: pat
+        # (optional) use a GitHub App to access the API instead of a PAT.
+        # appSecretName: gh-app-repo-creds
+      filters:
+        - repositoryMatch: ^microservices-gitops-infrastructure
+          pathsExist:
+            - kustomize/infrastructure/overlays/dev/kustomization.yaml
+  template:
+    metadata:
+      name: 'dev-infrastructure-{{branch}}'
+      namespace: argocd
+      finalizers:
+      - resources-finalizer.argocd.argoproj.io
+    spec:
+      project: default
+      source:
+        repoURL: '{{ url }}'
+        targetRevision: '{{ branch }}'
+        path: kustomize/infrastructure/overlays/dev
+      destination:
+        namespace: 'microservices-gitops-{{branch}}'
+        server: 'https://kubernetes.default.svc'
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+        - CreateNamespace=true
