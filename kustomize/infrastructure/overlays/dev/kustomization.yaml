@@ -4,3 +4,4 @@ bases:
 resources:
 - ./jaeger.yaml
 - ./jaeger.ingressroute.yaml
+- ./namespace.yaml
