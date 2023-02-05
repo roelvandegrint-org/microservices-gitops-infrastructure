@@ -1,6 +1,5 @@
 resources:
 - ../../base
-- ./backend-api-secrets-sealed.yml
 
 patches:
 - ./api.deployment.patch.yml

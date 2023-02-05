@@ -2,3 +2,4 @@ resources:
 - ./api.configmap.yml
 - ./api.deployment.yml
 - ./api.service.yml
+- ./public-api-secrets-sealed.yml

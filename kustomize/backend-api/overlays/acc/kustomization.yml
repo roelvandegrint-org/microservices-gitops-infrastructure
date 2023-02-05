@@ -1,6 +1,5 @@
 resources:
 - ../../base
-- ./backend-api-secrets-sealed.yml
 
 images:
 - name: roelvandegrint.azurecr.io/backend-api

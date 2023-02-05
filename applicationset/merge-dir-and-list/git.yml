@@ -1,0 +1,43 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: microservice-with-gitops
+  namespace: argocd
+spec:
+  generators:
+  - merge:
+      mergeKeys:
+      - path.basename
+      generators:
+      - git:
+          repoURL: 'https://github.com/roelvandegrint/microservices-gitops-infrastructure.git'
+          revision: HEAD
+          directories:
+          - path: kustomize/**/overlays/*
+      - list:
+          elements:
+          - path.basename: dev
+            namespace: development
+          - path.basename: acc
+            namespace: acceptance
+          - path.basename: prod
+            namespace: production
+  template:
+    metadata:
+      name: '{{path[1]}}-{{namespace}}'
+      namespace: argocd
+      finalizers:
+      - resources-finalizer.argocd.argoproj.io
+    spec:
+      project: default
+      source:
+        repoURL: 'https://github.com/roelvandegrint/microservices-gitops-infrastructure.git'
+        targetRevision: HEAD
+        path: '{{path}}'
+      destination:
+        namespace: '{{namespace}}'
+        server: 'https://kubernetes.default.svc'
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true

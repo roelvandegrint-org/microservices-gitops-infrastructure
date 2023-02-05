@@ -4,4 +4,4 @@ metadata:
   name: backend-api
 
 spec:
-  replicas: 5
+  replicas: 3
