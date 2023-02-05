@@ -1,0 +1,34 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: backend-api-list
+  namespace: argocd
+spec:
+  generators:
+  - list:
+      elements:
+      - env: dev
+        namespace: development
+      - env: acc
+        namespace: acceptance
+      - env: prod
+        namespace: production
+  template:
+    metadata:
+      name: backend-api-{{env}}
+      namespace: argocd
+      finalizers:
+      - resources-finalizer.argocd.argoproj.io
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/roelvandegrint/microservices-gitops-infrastructure.git
+        targetRevision: HEAD
+        path: kustomize/backend-api/overlays/{{env}}
+      destination:
+        namespace: '{{namespace}}'
+        server: https://kubernetes.default.svc
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
