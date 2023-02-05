@@ -9,12 +9,10 @@ spec:
       repoURL: 'https://github.com/roelvandegrint/microservices-gitops-infrastructure.git'
       revision: HEAD
       directories:
-      - path: argocd/*
-      - path: argocd/prod
-        exclude: true
+      - path: kustomize/**/overlays/*
   template:
     metadata:
-      name: app-of-apps-{{path.basename}}
+      name: '{{path[1]}}-{{path.basename}}'
       namespace: argocd
       finalizers:
       - resources-finalizer.argocd.argoproj.io
@@ -25,7 +23,7 @@ spec:
         targetRevision: HEAD
         path: '{{path}}'
       destination:
-        namespace: argocd
+        namespace: '{{path.basename}}'
         server: 'https://kubernetes.default.svc'
       syncPolicy:
         automated:
