@@ -1,8 +1,0 @@
-resources:
-- ../../base
-- ./backend-api-secrets-sealed.yml
-
-images:
-- name: roelvandegrint.azurecr.io/backend-api
-  newTag: babf551a3cb2fb39439a95b7893cbac6c36d5c31
-
