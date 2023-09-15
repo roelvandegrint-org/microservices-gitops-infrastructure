@@ -7,7 +7,7 @@ spec:
   generators:
   - git:
       repoURL: 'https://github.com/roelvandegrint/microservices-gitops-infrastructure.git'
-      revision: HEAD
+      revision: mongodb
       directories:
       - path: kustomize/**/overlays/acc
         exclude: true
