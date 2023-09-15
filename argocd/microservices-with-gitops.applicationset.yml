@@ -24,7 +24,7 @@ spec:
       project: default
       source:
         repoURL: 'https://github.com/roelvandegrint/microservices-gitops-infrastructure.git'
-        targetRevision: HEAD
+        targetRevision: mongodb
         path: '{{path}}'
       destination:
         namespace: 'microservices-gitops-{{path.basename}}'

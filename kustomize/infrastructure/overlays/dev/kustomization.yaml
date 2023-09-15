@@ -5,4 +5,4 @@ resources:
 - ./jaeger.yaml
 - ./jaeger.ingressroute.yaml
 - ./mongodb.deployment.yaml
-- ./mongodb.services.yaml
+- ./mongodb.service.yaml
