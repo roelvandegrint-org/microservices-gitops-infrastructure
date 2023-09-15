@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongodb-backend
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongodb-backend
+  template:
+    metadata:
+      labels:
+        app: mongodb-backend
+    spec:
+      containers:
+      - name: mongodb
+        image: mongo:4.4.18
+        imagePullPolicy: IfNotPresent
+      imagePullSecrets:
+        - name: roelvandegrint.azurecr.io
